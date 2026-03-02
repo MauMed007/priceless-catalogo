@@ -248,7 +248,7 @@ function renderCatalog(){
     return;
   }
   grid.innerHTML=visible.map((p,i)=>{
-    const waMsg=encodeURIComponent(`Hola 👋 Vi el catálogo de Miscelánea Priceless y me interesa:\n\n*${p.nombre}*\nPrecio: ${p.precio}\n\n¿Está disponible?`);
+    const waMsg=encodeURIComponent(`Hola, buenos días 👋 Vi su catálogo de Miscelánea Priceless y estoy interesado en este producto:\n\n🏷️ *${p.nombre}*\n💰 Precio: ${p.precio}\n📝 ${p.descripcion}\n\n¿Está disponible? ¿Cómo coordino la compra?`);
     const waUrl=`https://wa.me/${WA_NUMBER}?text=${waMsg}`;
     const stockClass=p.stock<=2?'low':'in';
     const stockText=p.stock<=2?`⚡ Solo ${p.stock} disponible${p.stock>1?'s':''}`:`✅ Disponible (${p.stock})`;

@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Miscelánea Priceless — Ofertas de la Semana</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fraunces:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --orange: #FF6B35;
+  --orange-dark: #E85520;
+  --orange-light: #FFF0EA;
+  --green: #2D9A5F;
+  --green-light: #E8F7EE;
+  --yellow: #FFD23F;
+  --red: #E63946;
+  --bg: #FBF7F4;
+  --white: #FFFFFF;
+  --dark: #1A1008;
+  --text: #3D2B1F;
+  --muted: #8B7355;
+  --border: #EAE0D5;
+  --shadow: 0 4px 24px rgba(26,16,8,0.09);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;}
+
+nav{
+  background:var(--orange);padding:0 24px;
+  display:flex;align-items:center;justify-content:space-between;
+  height:64px;position:sticky;top:0;z-index:100;
+  box-shadow:0 2px 16px rgba(255,107,53,0.35);
+}
+.nav-logo{
+  font-family:'Fraunces',serif;font-size:18px;font-weight:700;color:var(--white);
+  display:flex;align-items:center;gap:8px;text-decoration:none;line-height:1.1;
+}
+.nav-logo small{font-size:10px;display:block;letter-spacing:2px;opacity:0.8;font-family:'Nunito',sans-serif;font-weight:800;text-transform:uppercase;}
+.nav-wa{
+  display:flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,0.15);color:white;
+  padding:8px 16px;border-radius:20px;font-size:13px;font-weight:700;
+  text-decoration:none;transition:background 0.2s;border:1px solid rgba(255,255,255,0.25);
+}
+.nav-wa:hover{background:rgba(255,255,255,0.25);}
+
+.hero{
+  background:linear-gradient(135deg,var(--orange) 0%,var(--orange-dark) 100%);
+  padding:40px 24px 48px;text-align:center;
+  position:relative;overflow:hidden;
+}
+.hero::before{content:'';position:absolute;top:-80px;right:-80px;width:320px;height:320px;border-radius:50%;background:rgba(255,255,255,0.06);}
+.hero::after{content:'';position:absolute;bottom:-60px;left:-60px;width:240px;height:240px;border-radius:50%;background:rgba(255,210,63,0.12);}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;background:var(--yellow);color:var(--dark);font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:6px 14px;border-radius:20px;margin-bottom:16px;}
+.hero h1{font-family:'Fraunces',serif;font-size:clamp(28px,6vw,48px);font-weight:700;color:var(--white);line-height:1.1;margin-bottom:8px;position:relative;z-index:1;}
+.hero h1 em{font-style:italic;color:var(--yellow);}
+.hero-sub{font-size:15px;color:rgba(255,255,255,0.85);max-width:420px;margin:0 auto 24px;font-weight:600;position:relative;z-index:1;}
+.hero-badges{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1;}
+.hero-badge{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);color:white;padding:8px 16px;border-radius:20px;font-size:12px;font-weight:700;display:flex;align-items:center;gap:6px;}
+.badge-dot{width:7px;height:7px;border-radius:50%;background:var(--yellow);}
+
+.update-bar{background:var(--green-light);border-bottom:2px solid var(--green);padding:10px 24px;display:flex;align-items:center;justify-content:center;gap:10px;font-size:13px;font-weight:700;color:var(--green);text-align:center;flex-wrap:wrap;}
+
+.filters-wrap{padding:20px 20px 0;position:sticky;top:64px;z-index:90;background:var(--bg);}
+.filters{display:flex;gap:8px;overflow-x:auto;padding-bottom:16px;scrollbar-width:none;}
+.filters::-webkit-scrollbar{display:none;}
+.filter-btn{background:var(--white);border:2px solid var(--border);color:var(--text);padding:9px 18px;border-radius:20px;font-family:'Nunito',sans-serif;font-size:13px;font-weight:700;cursor:pointer;white-space:nowrap;transition:all 0.2s;display:flex;align-items:center;gap:6px;}
+.filter-btn:hover{border-color:var(--orange);color:var(--orange);}
+.filter-btn.active{background:var(--orange);border-color:var(--orange);color:white;}
+
+.search-wrap{padding:12px 20px 4px;position:relative;}
+.search-box{width:100%;padding:13px 18px 13px 46px;border:2px solid var(--border);border-radius:12px;font-family:'Nunito',sans-serif;font-size:14px;font-weight:600;background:var(--white);color:var(--text);outline:none;transition:border-color 0.2s;}
+.search-box:focus{border-color:var(--orange);}
+.search-icon{position:absolute;left:36px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:16px;pointer-events:none;}
+
+.catalog-header{padding:20px 20px 8px;display:flex;align-items:center;justify-content:space-between;}
+.catalog-count{font-size:13px;color:var(--muted);font-weight:700;}
+.catalog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px;padding:8px 20px 40px;}
+
+.product-card{background:var(--white);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);transition:transform 0.25s,box-shadow 0.25s;position:relative;display:flex;flex-direction:column;border:1px solid var(--border);cursor:pointer;}
+.product-card:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(26,16,8,0.14);}
+.product-img-wrap{aspect-ratio:1;background:var(--bg);display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative;}
+.product-emoji-placeholder{font-size:52px;opacity:0.7;}
+.product-discount-badge{position:absolute;top:8px;left:8px;background:var(--red);color:white;font-size:11px;font-weight:900;padding:4px 8px;border-radius:8px;z-index:2;}
+.product-new-badge{position:absolute;top:8px;right:8px;background:var(--green);color:white;font-size:10px;font-weight:800;padding:3px 8px;border-radius:8px;z-index:2;}
+.product-cat-tag{position:absolute;bottom:8px;left:8px;background:rgba(255,255,255,0.9);font-size:10px;font-weight:800;color:var(--muted);padding:3px 8px;border-radius:6px;letter-spacing:0.5px;text-transform:uppercase;z-index:2;}
+.product-info{padding:12px 12px 14px;flex:1;display:flex;flex-direction:column;}
+.product-name{font-size:13px;font-weight:800;color:var(--dark);line-height:1.35;margin-bottom:4px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.product-desc{font-size:11px;color:var(--muted);font-weight:600;margin-bottom:10px;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.product-price-row{display:flex;align-items:baseline;gap:6px;margin-bottom:10px;margin-top:auto;}
+.product-price{font-size:18px;font-weight:900;color:var(--orange);line-height:1;}
+.product-original{font-size:12px;color:var(--muted);text-decoration:line-through;font-weight:600;}
+.product-stock{font-size:11px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:4px;}
+.stock-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;}
+.product-stock.in .stock-dot{background:var(--green);}
+.product-stock.in{color:var(--green);}
+.product-stock.low .stock-dot{background:#F59E0B;}
+.product-stock.low{color:#B45309;}
+.btn-wa{display:flex;align-items:center;justify-content:center;gap:7px;background:var(--green);color:white;padding:10px 12px;border-radius:10px;font-family:'Nunito',sans-serif;font-size:12px;font-weight:800;text-decoration:none;transition:all 0.2s;border:none;cursor:pointer;width:100%;}
+.btn-wa:hover{background:#228A52;transform:scale(1.02);}
+
+.state-box{grid-column:1/-1;text-align:center;padding:60px 20px;}
+.state-icon{font-size:56px;margin-bottom:16px;}
+.state-title{font-size:20px;font-weight:800;color:var(--dark);margin-bottom:8px;}
+.state-desc{font-size:14px;color:var(--muted);font-weight:600;max-width:320px;margin:0 auto;}
+
+/* ===== MODAL ===== */
+.modal-overlay{
+  display:none;position:fixed;top:0;left:0;width:100%;height:100%;
+  background:rgba(0,0,0,0.7);z-index:200;
+  align-items:center;justify-content:center;
+  padding:16px;backdrop-filter:blur(4px);
+  animation:modalFadeIn 0.25s ease;
+}
+.modal-overlay.active{display:flex;}
+@keyframes modalFadeIn{from{opacity:0}to{opacity:1}}
+
+.modal{
+  background:var(--white);border-radius:20px;max-width:420px;width:100%;
+  max-height:90vh;overflow-y:auto;position:relative;
+  box-shadow:0 20px 60px rgba(0,0,0,0.3);
+  animation:modalSlideUp 0.3s ease;
+}
+@keyframes modalSlideUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+
+.modal-close{
+  position:absolute;top:12px;right:12px;z-index:10;
+  width:36px;height:36px;border-radius:50%;
+  background:rgba(0,0,0,0.5);border:none;color:white;
+  font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;
+  transition:background 0.2s;line-height:1;
+}
+.modal-close:hover{background:rgba(0,0,0,0.7);}
+
+.modal-gallery{position:relative;width:100%;aspect-ratio:1;background:var(--bg);overflow:hidden;border-radius:20px 20px 0 0;}
+.modal-slide{width:100%;height:100%;display:none;align-items:center;justify-content:center;font-size:120px;background:linear-gradient(135deg, var(--orange-light) 0%, var(--bg) 100%);}
+.modal-slide.active{display:flex;}
+
+.gallery-arrow{
+  position:absolute;top:50%;transform:translateY(-50%);
+  width:40px;height:40px;border-radius:50%;
+  background:rgba(255,255,255,0.9);border:none;
+  font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 2px 12px rgba(0,0,0,0.15);transition:all 0.2s;color:var(--dark);
+  z-index:5;
+}
+.gallery-arrow:hover{background:white;transform:translateY(-50%) scale(1.1);}
+.gallery-arrow.left{left:10px;}
+.gallery-arrow.right{right:10px;}
+
+.gallery-dots{
+  position:absolute;bottom:12px;left:50%;transform:translateX(-50%);
+  display:flex;gap:6px;z-index:5;
+}
+.gallery-dot{
+  width:8px;height:8px;border-radius:50%;
+  background:rgba(255,255,255,0.5);border:1.5px solid rgba(255,255,255,0.8);
+  cursor:pointer;transition:all 0.2s;
+}
+.gallery-dot.active{background:white;transform:scale(1.2);}
+
+.gallery-counter{
+  position:absolute;top:12px;left:12px;z-index:5;
+  background:rgba(0,0,0,0.5);color:white;
+  font-size:11px;font-weight:800;padding:4px 10px;border-radius:12px;
+}
+
+.modal-body{padding:20px;}
+.modal-badges{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap;}
+.modal-badge-discount{background:var(--red);color:white;font-size:11px;font-weight:900;padding:4px 10px;border-radius:8px;}
+.modal-badge-new{background:var(--green);color:white;font-size:11px;font-weight:800;padding:4px 10px;border-radius:8px;}
+.modal-badge-cat{background:var(--orange-light);color:var(--orange);font-size:11px;font-weight:800;padding:4px 10px;border-radius:8px;}
+
+.modal-name{font-size:20px;font-weight:900;color:var(--dark);line-height:1.3;margin-bottom:8px;}
+.modal-desc{font-size:14px;color:var(--muted);font-weight:600;line-height:1.6;margin-bottom:16px;}
+
+.modal-price-row{display:flex;align-items:baseline;gap:10px;margin-bottom:6px;}
+.modal-price{font-size:28px;font-weight:900;color:var(--orange);}
+.modal-original{font-size:16px;color:var(--muted);text-decoration:line-through;font-weight:600;}
+.modal-savings{font-size:12px;color:var(--green);font-weight:800;margin-bottom:16px;}
+
+.modal-stock{font-size:13px;font-weight:700;margin-bottom:20px;display:flex;align-items:center;gap:6px;}
+.modal-stock .stock-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.modal-stock.in .stock-dot{background:var(--green);}
+.modal-stock.in{color:var(--green);}
+.modal-stock.low .stock-dot{background:#F59E0B;}
+.modal-stock.low{color:#B45309;}
+
+.modal-wa-btn{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  background:var(--green);color:white;padding:16px 24px;border-radius:14px;
+  font-family:'Nunito',sans-serif;font-size:15px;font-weight:800;
+  text-decoration:none;transition:all 0.2s;width:100%;border:none;cursor:pointer;
+}
+.modal-wa-btn:hover{background:#228A52;transform:scale(1.02);}
+
+.how-section{background:var(--dark);padding:40px 24px;margin-top:20px;}
+.how-title{font-family:'Fraunces',serif;font-size:26px;color:var(--yellow);text-align:center;margin-bottom:8px;}
+.how-sub{font-size:13px;color:rgba(255,255,255,0.5);text-align:center;margin-bottom:28px;font-weight:600;}
+.how-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;max-width:800px;margin:0 auto;}
+.how-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:20px;text-align:center;}
+.how-num{font-size:32px;font-weight:900;color:var(--orange);font-family:'Fraunces',serif;line-height:1;margin-bottom:10px;}
+.how-card-title{font-size:14px;font-weight:800;color:white;margin-bottom:6px;}
+.how-card-desc{font-size:12px;color:rgba(255,255,255,0.5);line-height:1.6;font-weight:600;}
+
+footer{background:var(--dark);padding:28px 24px;text-align:center;border-top:2px solid var(--orange);}
+.footer-logo{font-family:'Fraunces',serif;font-size:20px;color:var(--white);margin-bottom:4px;}
+.footer-logo em{color:var(--yellow);font-style:italic;}
+.footer-tagline{font-size:11px;color:rgba(255,255,255,0.35);margin-bottom:14px;font-weight:600;letter-spacing:1px;text-transform:uppercase;}
+.footer-wa{display:inline-flex;align-items:center;gap:8px;background:var(--green);color:white;padding:12px 24px;border-radius:24px;font-size:13px;font-weight:800;text-decoration:none;margin:0 0 16px;transition:all 0.2s;}
+.footer-wa:hover{background:#228A52;transform:translateY(-2px);}
+.footer-text{font-size:12px;color:rgba(255,255,255,0.4);font-weight:600;line-height:1.7;}
+
+.spinner{width:36px;height:36px;border-radius:50%;border:3px solid var(--border);border-top-color:var(--orange);animation:spin 0.8s linear infinite;margin:0 auto 16px;}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+@media(max-width:480px){
+  .catalog-grid{grid-template-columns:repeat(2,1fr);gap:10px;padding:8px 12px 40px;}
+  .hero{padding:28px 16px 36px;}
+  nav{padding:0 16px;}
+  .modal{max-width:100%;border-radius:16px;}
+  .modal-gallery{border-radius:16px 16px 0 0;}
+  .gallery-arrow{width:34px;height:34px;font-size:16px;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#">
+    🏷️ Miscelánea
+    <span style="color:var(--yellow)">Priceless</span>
+  </a>
+  <a class="nav-wa" href="https://wa.me/50240578766?text=Hola,%20vi%20su%20catálogo%20y%20quiero%20información" target="_blank">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    WhatsApp
+  </a>
+</nav>
+
+<div class="hero">
+  <div class="hero-tag" id="week-tag">🔥 Ofertas de la Semana</div>
+  <h1>Miscelánea<br><em>Priceless</em></h1>
+  <p class="hero-sub">Productos PriceSmart con descuentos de hasta 70% — stock limitado cada semana</p>
+  <div class="hero-badges">
+    <div class="hero-badge"><div class="badge-dot"></div>Precios de remate</div>
+    <div class="hero-badge"><div class="badge-dot"></div>Envío a domicilio</div>
+    <div class="hero-badge"><div class="badge-dot"></div>Pago en efectivo o transferencia</div>
+  </div>
+</div>
+
+<div class="update-bar">
+  ✅ Catálogo actualizado el <strong id="update-date">lunes</strong> · Los productos agotados se ocultan automáticamente
+</div>
+
+<div class="search-wrap">
+  <span class="search-icon">🔍</span>
+  <input type="text" class="search-box" id="search-input" placeholder="Buscar producto..." oninput="filterProducts()">
+</div>
+
+<div class="filters-wrap">
+  <div class="filters">
+    <button class="filter-btn active" onclick="setFilter('todos',this)">🛍️ Todos</button>
+    <button class="filter-btn" onclick="setFilter('electronica',this)">📱 Electrónica</button>
+    <button class="filter-btn" onclick="setFilter('hogar',this)">🏠 Hogar</button>
+    <button class="filter-btn" onclick="setFilter('alimentos',this)">🥫 Alimentos</button>
+    <button class="filter-btn" onclick="setFilter('ropa',this)">👕 Ropa</button>
+    <button class="filter-btn" onclick="setFilter('juguetes',this)">🧸 Juguetes</button>
+    <button class="filter-btn" onclick="setFilter('belleza',this)">💄 Belleza</button>
+  </div>
+</div>
+
+<div class="catalog-header">
+  <div class="catalog-count" id="catalog-count">Cargando productos...</div>
+</div>
+<div class="catalog-grid" id="catalog-grid">
+  <div class="state-box">
+    <div class="spinner"></div>
+    <div class="state-title">Cargando catálogo...</div>
+    <div class="state-desc">Obteniendo los productos disponibles de esta semana</div>
+  </div>
+</div>
+
+<!-- MODAL DE PRODUCTO -->
+<div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
+  <div class="modal" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-gallery" id="modal-gallery">
+      <div class="gallery-counter" id="gallery-counter">1 / 3</div>
+      <div class="modal-slide active" id="modal-slide-1"></div>
+      <div class="modal-slide" id="modal-slide-2"></div>
+      <div class="modal-slide" id="modal-slide-3"></div>
+      <button class="gallery-arrow left" onclick="changeSlide(-1)">‹</button>
+      <button class="gallery-arrow right" onclick="changeSlide(1)">›</button>
+      <div class="gallery-dots" id="gallery-dots">
+        <div class="gallery-dot active" onclick="goToSlide(0)"></div>
+        <div class="gallery-dot" onclick="goToSlide(1)"></div>
+        <div class="gallery-dot" onclick="goToSlide(2)"></div>
+      </div>
+    </div>
+    <div class="modal-body">
+      <div class="modal-badges" id="modal-badges"></div>
+      <div class="modal-name" id="modal-name"></div>
+      <div class="modal-desc" id="modal-desc"></div>
+      <div class="modal-price-row">
+        <div class="modal-price" id="modal-price"></div>
+        <div class="modal-original" id="modal-original"></div>
+      </div>
+      <div class="modal-savings" id="modal-savings"></div>
+      <div class="modal-stock" id="modal-stock"></div>
+      <a class="modal-wa-btn" id="modal-wa-btn" href="#" target="_blank">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Quiero este producto
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="how-section">
+  <div class="how-title">¿Cómo funciona?</div>
+  <div class="how-sub">Así de fácil es comprar en Miscelánea Priceless</div>
+  <div class="how-grid">
+    <div class="how-card"><div class="how-num">1</div><div class="how-card-title">Busca tu producto</div><div class="how-card-desc">Navega por categorías o usa el buscador para encontrar lo que necesitas.</div></div>
+    <div class="how-card"><div class="how-num">2</div><div class="how-card-title">Toca para ver detalle</div><div class="how-card-desc">Toca cualquier producto para ver todas las fotos y características completas.</div></div>
+    <div class="how-card"><div class="how-num">3</div><div class="how-card-title">Confirma tu pedido</div><div class="how-card-desc">Toca "Quiero este" y WhatsApp se abre con tu pedido ya escrito.</div></div>
+    <div class="how-card"><div class="how-num">4</div><div class="how-card-title">¡Recibe tu producto!</div><div class="how-card-desc">Coordina con nosotros la forma de entrega que más te convenga.</div></div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">Miscelánea <em>Priceless</em></div>
+  <div class="footer-tagline">Saldos y ofertas PriceSmart · Guatemala</div>
+  <a class="footer-wa" href="https://wa.me/50240578766" target="_blank">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Escríbenos por WhatsApp
+  </a>
+  <div class="footer-text">Guatemala · +502 4057-8766</div>
+</footer>
+
+<script>
+const WA_NUMBER = '50240578766';
+
+const PRODUCTS = [
+  { id:1, nombre:'Televisor Samsung 50"', descripcion:'Smart TV 4K UHD, empaque con golpe leve en esquina. Pantalla en perfecto estado, incluye control remoto y cable de poder. Garantía de fábrica vigente.', precio:'Q1,850', precioOriginal:'Q3,200', categoria:'electronica', stock:3, emoji:'📺', descuento:'42%', nuevo:false, emojis:['📺','🖥️','📡'] },
+  { id:2, nombre:'Cafetera Nespresso', descripcion:'Máquina automática de cápsulas, caja abierta pero completa. Incluye kit de bienvenida con 14 cápsulas de muestra. Funciona perfectamente.', precio:'Q680', precioOriginal:'Q1,100', categoria:'hogar', stock:2, emoji:'☕', descuento:'38%', nuevo:true, emojis:['☕','🫖','📦'] },
+  { id:3, nombre:'Set de Ollas 12 piezas', descripcion:'Antiadherentes de aluminio grueso, empaque roto pero ollas en perfecto estado. Incluye tapas de vidrio templado y asas ergonómicas.', precio:'Q420', precioOriginal:'Q750', categoria:'hogar', stock:5, emoji:'🍳', descuento:'44%', nuevo:false, emojis:['🍳','🥘','🫕'] },
+  { id:4, nombre:'Audífonos Sony WH-1000', descripcion:'Noise cancelling premium, caja con daño menor. Audífonos completamente nuevos con estuche rígido, cable USB-C y cable auxiliar.', precio:'Q890', precioOriginal:'Q1,650', categoria:'electronica', stock:1, emoji:'🎧', descuento:'46%', nuevo:false, emojis:['🎧','🎵','🔌'] },
+  { id:5, nombre:'Cereal Kellogg\'s x6', descripcion:'Pack de 6 cajas variadas, una caja con golpe pero cereal completamente sellado. Incluye Corn Flakes, Zucaritas y Froot Loops.', precio:'Q145', precioOriginal:'Q220', categoria:'alimentos', stock:8, emoji:'🥣', descuento:'34%', nuevo:true, emojis:['🥣','🥛','🥄'] },
+  { id:6, nombre:'Licuadora Oster Pro', descripcion:'Motor de 2 velocidades + pulso, empaque mojado pero licuadora sin uso. Vaso de vidrio resistente de 1.5L y cuchillas de acero.', precio:'Q310', precioOriginal:'Q520', categoria:'hogar', stock:4, emoji:'🫙', descuento:'40%', nuevo:false, emojis:['🫙','🧊','🍹'] },
+  { id:7, nombre:'Camisas Tommy Hilfiger x3', descripcion:'Pack 3 camisas polo talla M, empaque abierto pero camisas nuevas con etiquetas. Colores: blanco, navy y rojo.', precio:'Q390', precioOriginal:'Q680', categoria:'ropa', stock:2, emoji:'👕', descuento:'43%', nuevo:true, emojis:['👕','👔','🏷️'] },
+  { id:8, nombre:'Set LEGO Creator', descripcion:'850 piezas, caja con daño en esquina pero todas las bolsas selladas. Manual de instrucciones completo. Para edades 8+.', precio:'Q280', precioOriginal:'Q480', categoria:'juguetes', stock:3, emoji:'🧱', descuento:'42%', nuevo:false, emojis:['🧱','🏗️','📐'] },
+  { id:9, nombre:'Crema Neutrogena x4', descripcion:'Pack 4 cremas hidratantes Hydro Boost, empaque plástico roto pero frascos sellados. 50ml cada una. Ideal para piel seca.', precio:'Q185', precioOriginal:'Q320', categoria:'belleza', stock:6, emoji:'🧴', descuento:'42%', nuevo:false, emojis:['🧴','✨','💧'] },
+  { id:10, nombre:'Tablet Amazon Fire 10"', descripcion:'32GB almacenamiento, caja con rasgadura. Tablet sin uso con cargador original, pantalla HD y 12hrs de batería.', precio:'Q980', precioOriginal:'Q1,600', categoria:'electronica', stock:1, emoji:'📱', descuento:'39%', nuevo:false, emojis:['📱','🔋','🔌'] },
+  { id:11, nombre:'Aceite de Oliva 3L', descripcion:'Extra virgen importado de España, empaque con golpe pero botella perfectamente sellada. Ideal para cocinar y ensaladas.', precio:'Q165', precioOriginal:'Q280', categoria:'alimentos', stock:10, emoji:'🫒', descuento:'41%', nuevo:true, emojis:['🫒','🍶','🥗'] },
+  { id:12, nombre:'Zapatillas Nike Air x2', descripcion:'Pack 2 pares talla 40, caja abierta pero zapatos completamente nuevos. Air Max 90 en negro y blanco.', precio:'Q520', precioOriginal:'Q920', categoria:'ropa', stock:0, emoji:'👟', descuento:'43%', nuevo:false, emojis:['👟','👟','📦'] },
+  { id:13, nombre:'Robot de Cocina Ninja', descripcion:'7 funciones (picar, mezclar, amasar, rallar, rebanar, hacer puré y batir), empaque con daño, robot completo sin uso con todos los accesorios.', precio:'Q1,200', precioOriginal:'Q2,100', categoria:'hogar', stock:2, emoji:'🤖', descuento:'43%', nuevo:false, emojis:['🤖','🍴','⚙️'] },
+  { id:14, nombre:'Muñeca Barbie Deluxe', descripcion:'Edición especial con 15 accesorios, caja con golpe en esquina. Incluye ropa extra, zapatos y accesorios de maquillaje miniatura.', precio:'Q95', precioOriginal:'Q165', categoria:'juguetes', stock:4, emoji:'🪆', descuento:'42%', nuevo:true, emojis:['🪆','👗','💄'] },
+  { id:15, nombre:'Perfume Calvin Klein 100ml', descripcion:'Eternity for Men, caja con daño leve pero frasco completamente sellado. Fragancia amaderada fresca, larga duración.', precio:'Q340', precioOriginal:'Q580', categoria:'belleza', stock:3, emoji:'🧴', descuento:'41%', nuevo:false, emojis:['🧴','🌿','✨'] },
+];
+
+let currentFilter='todos', currentSearch='', currentSlide=0;
+
+function setFilter(cat,btn){
+  currentFilter=cat;
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  filterProducts();
+}
+function filterProducts(){
+  currentSearch=document.getElementById('search-input').value.toLowerCase();
+  renderCatalog();
+}
+
+function renderCatalog(){
+  const grid=document.getElementById('catalog-grid');
+  let visible=PRODUCTS.filter(p=>p.stock>0);
+  if(currentFilter!=='todos') visible=visible.filter(p=>p.categoria===currentFilter);
+  if(currentSearch) visible=visible.filter(p=>p.nombre.toLowerCase().includes(currentSearch)||p.descripcion.toLowerCase().includes(currentSearch));
+  document.getElementById('catalog-count').textContent=`${visible.length} producto${visible.length!==1?'s':''} disponible${visible.length!==1?'s':''}`;
+  if(visible.length===0){
+    grid.innerHTML=`<div class="state-box"><div class="state-icon">🔍</div><div class="state-title">No encontramos productos</div><div class="state-desc">Intenta con otra búsqueda o cambia el filtro</div></div>`;
+    return;
+  }
+  grid.innerHTML=visible.map((p,i)=>{
+    const photoCount = p.emojis ? p.emojis.length : 0;
+    return `<div class="product-card" style="animation:fadeIn 0.4s ease both;animation-delay:${i*0.04}s" onclick="openModal(${p.id})">
+      <div class="product-img-wrap">
+        <div class="product-emoji-placeholder">${p.emoji}</div>
+        ${p.descuento?`<div class="product-discount-badge">-${p.descuento}</div>`:''}
+        ${p.nuevo?`<div class="product-new-badge">NUEVO</div>`:''}
+        <div class="product-cat-tag">${getCatLabel(p.categoria)}</div>
+      </div>
+      <div class="product-info">
+        <div class="product-name">${p.nombre}</div>
+        <div class="product-desc">${p.descripcion}</div>
+        <div class="product-price-row">
+          <div class="product-price">${p.precio}</div>
+          ${p.precioOriginal?`<div class="product-original">${p.precioOriginal}</div>`:''}
+        </div>
+        <div class="product-stock ${p.stock<=2?'low':'in'}"><div class="stock-dot"></div>${p.stock<=2?`⚡ Solo ${p.stock} disponible${p.stock>1?'s':''}`:`✅ Disponible (${p.stock})`}</div>
+        <a class="btn-wa" href="https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(`Hola, buenos días 👋 Vi su catálogo de Miscelánea Priceless y estoy interesado en este producto:\n\n🏷️ *${p.nombre}*\n💰 Precio: ${p.precio}\n📝 ${p.descripcion}\n\n¿Está disponible? ¿Cómo coordino la compra?`)}" target="_blank" onclick="event.stopPropagation()">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Quiero este
+        </a>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function getCatLabel(cat){
+  return{electronica:'📱 Tech',hogar:'🏠 Hogar',alimentos:'🥫 Food',ropa:'👕 Ropa',juguetes:'🧸 Juguetes',belleza:'💄 Belleza'}[cat]||cat;
+}
+
+function getCatLabelFull(cat){
+  return{electronica:'📱 Electrónica',hogar:'🏠 Hogar',alimentos:'🥫 Alimentos',ropa:'👕 Ropa',juguetes:'🧸 Juguetes',belleza:'💄 Belleza'}[cat]||cat;
+}
+
+// ===== MODAL & GALLERY =====
+function openModal(productId){
+  const p = PRODUCTS.find(x => x.id === productId);
+  if(!p) return;
+  currentSlide = 0;
+
+  // Set gallery emoji slides
+  const emojis = p.emojis || [p.emoji];
+  for(let i = 0; i < 3; i++){
+    const slide = document.getElementById(`modal-slide-${i+1}`);
+    if(emojis[i]){
+      slide.textContent = emojis[i];
+      slide.style.display = i===0 ? 'flex' : 'none';
+      slide.className = i===0 ? 'modal-slide active' : 'modal-slide';
+    } else {
+      slide.textContent = '';
+      slide.style.display = 'none';
+      slide.className = 'modal-slide';
+    }
+  }
+
+  // Update dots
+  const dotsContainer = document.getElementById('gallery-dots');
+  dotsContainer.innerHTML = emojis.map((_, i) =>
+    `<div class="gallery-dot${i===0?' active':''}" onclick="goToSlide(${i})"></div>`
+  ).join('');
+
+  // Update counter
+  document.getElementById('gallery-counter').textContent = `1 / ${emojis.length}`;
+
+  // Badges
+  let badges = '';
+  if(p.descuento) badges += `<div class="modal-badge-discount">-${p.descuento} OFF</div>`;
+  if(p.nuevo) badges += `<div class="modal-badge-new">NUEVO</div>`;
+  badges += `<div class="modal-badge-cat">${getCatLabelFull(p.categoria)}</div>`;
+  document.getElementById('modal-badges').innerHTML = badges;
+
+  // Info
+  document.getElementById('modal-name').textContent = p.nombre;
+  document.getElementById('modal-desc').textContent = p.descripcion;
+  document.getElementById('modal-price').textContent = p.precio;
+  document.getElementById('modal-original').textContent = p.precioOriginal || '';
+
+  // Savings
+  if(p.precioOriginal && p.precio){
+    const orig = parseInt(p.precioOriginal.replace(/[^\d]/g,''));
+    const curr = parseInt(p.precio.replace(/[^\d]/g,''));
+    const saved = orig - curr;
+    document.getElementById('modal-savings').textContent = `💰 Te ahorras Q${saved.toLocaleString()} comprando aquí`;
+  }
+
+  // Stock
+  const stockEl = document.getElementById('modal-stock');
+  if(p.stock <= 2){
+    stockEl.className = 'modal-stock low';
+    stockEl.innerHTML = `<div class="stock-dot"></div>⚡ ¡Solo ${p.stock} disponible${p.stock>1?'s':''}! — No te lo pierdas`;
+  } else {
+    stockEl.className = 'modal-stock in';
+    stockEl.innerHTML = `<div class="stock-dot"></div>✅ Disponible (${p.stock} en stock)`;
+  }
+
+  // WhatsApp button
+  const waMsg = encodeURIComponent(`Hola, buenos días 👋 Vi su catálogo de Miscelánea Priceless y estoy interesado en este producto:\n\n🏷️ *${p.nombre}*\n💰 Precio: ${p.precio}\n📝 ${p.descripcion}\n\n¿Está disponible? ¿Cómo coordino la compra?`);
+  document.getElementById('modal-wa-btn').href = `https://wa.me/${WA_NUMBER}?text=${waMsg}`;
+
+  // Show modal
+  document.getElementById('modal-overlay').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal(event){
+  if(event && event.target !== document.getElementById('modal-overlay')) return;
+  document.getElementById('modal-overlay').classList.remove('active');
+  document.body.style.overflow = '';
+}
+// Also close if called without event (from X button)
+document.querySelector('.modal-close').addEventListener('click', function(){
+  document.getElementById('modal-overlay').classList.remove('active');
+  document.body.style.overflow = '';
+});
+
+function changeSlide(dir){
+  const slides = document.querySelectorAll('.modal-slide');
+  const totalVisible = Array.from(slides).filter(s => s.textContent).length;
+  if(totalVisible <= 1) return;
+  currentSlide = (currentSlide + dir + totalVisible) % totalVisible;
+  updateSlide(totalVisible);
+}
+
+function goToSlide(index){
+  currentSlide = index;
+  const slides = document.querySelectorAll('.modal-slide');
+  const totalVisible = Array.from(slides).filter(s => s.textContent).length;
+  updateSlide(totalVisible);
+}
+
+function updateSlide(total){
+  const slides = document.querySelectorAll('.modal-slide');
+  slides.forEach((slide, i) => {
+    if(i === currentSlide){
+      slide.style.display = 'flex';
+      slide.className = 'modal-slide active';
+    } else {
+      slide.style.display = 'none';
+      slide.className = 'modal-slide';
+    }
+  });
+  // Update dots
+  document.querySelectorAll('.gallery-dot').forEach((dot, i) => {
+    dot.classList.toggle('active', i === currentSlide);
+  });
+  // Update counter
+  document.getElementById('gallery-counter').textContent = `${currentSlide + 1} / ${total}`;
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', function(e){
+  if(!document.getElementById('modal-overlay').classList.contains('active')) return;
+  if(e.key === 'Escape') {
+    document.getElementById('modal-overlay').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  if(e.key === 'ArrowLeft') changeSlide(-1);
+  if(e.key === 'ArrowRight') changeSlide(1);
+});
+
+// Touch/swipe support for gallery
+let touchStartX = 0;
+let touchEndX = 0;
+const gallery = document.getElementById('modal-gallery');
+gallery.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, {passive:true});
+gallery.addEventListener('touchend', e => {
+  touchEndX = e.changedTouches[0].screenX;
+  const diff = touchStartX - touchEndX;
+  if(Math.abs(diff) > 50){
+    if(diff > 0) changeSlide(1);
+    else changeSlide(-1);
+  }
+}, {passive:true});
+
+// ===== DATE =====
+const days=['domingo','lunes','martes','miércoles','jueves','viernes','sábado'];
+const months=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+const now=new Date();
+document.getElementById('update-date').textContent=`${days[now.getDay()]} ${now.getDate()} de ${months[now.getMonth()]}`;
+document.getElementById('week-tag').textContent=`🔥 Semana del ${now.getDate()} de ${months[now.getMonth()]}`;
+setTimeout(renderCatalog,600);
+</script>
+</body>
+</html>
